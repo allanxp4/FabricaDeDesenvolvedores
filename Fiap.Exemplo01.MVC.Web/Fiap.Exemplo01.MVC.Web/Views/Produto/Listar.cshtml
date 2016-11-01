@@ -1,0 +1,34 @@
+﻿@model List<Fiap.Exemplo01.MVC.Web.Models.Produto>
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Listar</h2>
+
+<div class="alert alert-success">
+    @TempData["mensagem"]
+</div>
+
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Quantidade</th>
+            <th>Valor</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+               <td>@p.nome</td>
+               <td>@p.quantidade</td>
+               <td>@p.valor</td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+
