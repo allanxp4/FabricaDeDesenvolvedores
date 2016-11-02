@@ -1,0 +1,37 @@
+﻿@model List<Fiap.Exemplo02.MVC.Web.Models.Aluno>
+
+@if(TempData != null)
+{
+    <div class="alert-success">
+        TempData["msg"]
+    </div>
+}
+
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Listar</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Data de Nascimento</th>
+            <th>Bolsa</th>
+            <th>Desconto</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var a in Model)
+        {
+            <tr>
+                <td>@a.Nome</td>
+                <td>@a.DataNascimento</td>
+                <td>@a.Bolsa</td>
+                <td>@a.Desconto</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
