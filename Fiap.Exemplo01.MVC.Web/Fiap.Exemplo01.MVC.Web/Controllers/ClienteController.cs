@@ -12,7 +12,7 @@ namespace Fiap.Exemplo01.MVC.Web.Controllers
 
         private static List<Cliente> _lista = new List<Cliente>();
         //CRIAR UMA LISTA DE CASADO, SOLTEIRO, ETC
-        private static List<string> _lista2 = new List<string>();
+        private static List<string> _lista2 = new List<string>();// {"","Solteiro(a)", "Casado(a)", "Divorciado(a)"};
 
         [HttpGet]
         public ActionResult Cadastrar()
