@@ -18,6 +18,6 @@ namespace Fiap.Exemplo02.MVC.Web.Models
         public string Nome { get; set; }
         public Nullable<double> Nota { get; set; }
     
-        public virtual Projeto Projeto1 { get; set; }
+        public virtual Projeto Projeto { get; set; }
     }
 }

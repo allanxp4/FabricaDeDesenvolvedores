@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="0f29589e7c1a45869f0fc7cc2308376b" Name="Diagram1">
         <EntityTypeShape EntityType="Fiap.Exemplo02.Database.Model.Aluno" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Fiap.Exemplo02.Database.Model.Grupo" Width="1.5" PointX="5.625" PointY="1.25" />
+        <EntityTypeShape EntityType="Fiap.Exemplo02.Database.Model.Grupo" Width="1.5" PointX="6.875" PointY="1.25" />
         <EntityTypeShape EntityType="Fiap.Exemplo02.Database.Model.Projeto" Width="1.5" PointX="3.375" PointY="1" />
         <AssociationConnector Association="Fiap.Exemplo02.Database.Model.FK_Projeto_Grupo" />
       </Diagram>

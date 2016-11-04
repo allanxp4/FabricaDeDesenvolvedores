@@ -21,6 +21,6 @@ namespace Fiap.Exemplo02.MVC.Web.Models
         public Nullable<System.DateTime> DataTermino { get; set; }
         public bool Entregue { get; set; }
     
-        public virtual Grupo Grupo1 { get; set; }
+        public virtual Grupo Grupo { get; set; }
     }
 }

@@ -1,0 +1,29 @@
+﻿@model Fiap.Exemplo02.MVC.Web.Models.Grupo
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastrar</h2>
+
+@using(@Html.BeginForm("Cadastrar", "Grupo"))
+{
+    <div class="form-group">
+        @Html.LabelFor(g => g.Nome)
+        @Html.TextBoxFor(g => g.Nome, new { @class = "form-control" })
+    </div>
+
+    <div classs="form-group">
+        @Html.LabelFor(g => g.Nota)
+        @Html.TextBoxFor(g => g.Nota, new { @class = "form-control", type = "number", step = "any"})
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(g => g.Projeto.Nome)
+        @Html.TextBoxFor(g => g.Projeto.Nome)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(g => g.Projeto.Descricao)
+        @Html.TextBoxFor(g => g.Projeto.Descricao)
+    </div>
+}
