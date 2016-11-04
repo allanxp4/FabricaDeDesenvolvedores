@@ -1,9 +1,11 @@
 ﻿@model List<Fiap.Exemplo02.MVC.Web.Models.Aluno>
 
-@if(TempData != null)
+@if(TempData["msg"] != null)
 {
-    <div class="alert-success">
-        TempData["msg"]
+    <br />
+    <div class="alert alert-success">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        @TempData["msg"]
     </div>
 }
 
@@ -20,6 +22,7 @@
             <th>Data de Nascimento</th>
             <th>Bolsa</th>
             <th>Desconto</th>
+            <th>Ações</th>
         </tr>
     </thead>
     <tbody>
@@ -30,6 +33,10 @@
                 <td>@a.DataNascimento</td>
                 <td>@a.Bolsa</td>
                 <td>@a.Desconto</td>
+                <td>
+                    <button class="btn btn-warning" onclick="editarAluno(@a.Id)">Editar</button>
+                    <button class="btn btn-danger" onclick="apagarAluno(@a.Id)">Apagar</button>
+                </td>
             </tr>
         }
     </tbody>
