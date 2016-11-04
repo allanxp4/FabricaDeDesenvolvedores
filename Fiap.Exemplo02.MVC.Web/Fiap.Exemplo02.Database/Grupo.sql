@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Grupo]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Nome] NVARCHAR(MAX) NOT NULL, 
+    [Nota] FLOAT NULL
+
+)

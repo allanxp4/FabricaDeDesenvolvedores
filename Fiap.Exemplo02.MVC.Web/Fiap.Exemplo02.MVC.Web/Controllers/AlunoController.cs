@@ -1,4 +1,5 @@
-﻿using Fiap.Exemplo02.MVC.Web.Models;
+﻿using EntityFramework.Extensions;
+using Fiap.Exemplo02.MVC.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,16 @@ namespace Fiap.Exemplo02.MVC.Web.Controllers
           List<Aluno> lista = _context.Aluno.ToList();
 
             return View(lista);
+        }
+
+        [HttpGet]
+        public ActionResult Apagar(int id)
+        {
+            _context.Aluno
+                .Where(u => u.Id == id)
+                .Delete();
+
+            return new HttpStatusCodeResult(200);
         }
     }
 }

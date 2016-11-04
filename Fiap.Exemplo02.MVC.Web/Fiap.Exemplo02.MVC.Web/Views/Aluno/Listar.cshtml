@@ -1,44 +1,72 @@
 ﻿@model List<Fiap.Exemplo02.MVC.Web.Models.Aluno>
+<div>
+    @if(TempData["msg"] != null)
+    {
 
-@if(TempData["msg"] != null)
-{
+    }
+
     <br />
-    <div class="alert alert-success">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        @TempData["msg"]
-    </div>
-}
+    <div id="msg"></div>
 
-@{
-    ViewBag.Title = "Listar";
-}
+    @{
+        ViewBag.Title = "Listar";
+    }
 
-<h2>Listar</h2>
+    <h2>Alunos</h2>
+    
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Nome</th>
-            <th>Data de Nascimento</th>
-            <th>Bolsa</th>
-            <th>Desconto</th>
-            <th>Ações</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var a in Model)
-        {
+    <table class="table table-bordered">
+        <thead>
             <tr>
-                <td>@a.Nome</td>
-                <td>@a.DataNascimento</td>
-                <td>@a.Bolsa</td>
-                <td>@a.Desconto</td>
-                <td>
-                    <button class="btn btn-warning" onclick="editarAluno(@a.Id)">Editar</button>
-                    <button class="btn btn-danger" onclick="apagarAluno(@a.Id)">Apagar</button>
-                </td>
+                <th>Nome</th>
+                <th>Data de Nascimento</th>
+                <th>Bolsa</th>
+                <th>Desconto</th>
+                <th>Ações</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var a in Model)
+            {
+                <tr id="aluno-@a.Id">
+                    <td>@a.Nome</td>
+                    <td>@a.DataNascimento</td>
+                    <td>@a.Bolsa</td>
+                    <td>@a.Desconto</td>
+                    <td>
+                        <button class="btn btn-warning" data-toggle="modal" data-target="#modal-editar-@a.Id">Editar</button>
+                        <button class="btn btn-danger" onclick="apagarAluno(@a.Id)">Apagar</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 
+    @foreach (var a in Model)
+    {
+    <!-- Modal -->
+    <div id="modal-editar-@a.Id" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Editar Aluno</h4>
+                </div>
+                <div class="modal-body">
+                    @Html.Partial("FormAluno", a)                  
+
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    }
+
+    <script src="~/scripts/listar.js"></script>
+</div>
